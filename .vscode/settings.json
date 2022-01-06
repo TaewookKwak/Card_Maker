@@ -1,0 +1,8 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#3ab655",
+    "titleBar.inactiveBackground": "#3ab655"
+  },
+  "editor.defaultFormatter": "SimonSiefke.prettier-vscode",
+  "editor.formatOnSave": true
+}
