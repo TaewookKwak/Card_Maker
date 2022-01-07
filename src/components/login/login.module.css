@@ -1,0 +1,65 @@
+@value makerBlack,makerOrange,makerWhiteGray,makerGreen,makerWhite,makerBlack from '../../common/colors.css';
+.login {
+  width: 30em;
+  height: 40em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.loginTitle {
+  font-size: 3em;
+  color: makerGreen;
+}
+
+.loginTitle svg {
+  border: 0.1em solid;
+  padding: 0.5em;
+  border-radius: 50%;
+}
+
+.title {
+  margin: 0;
+  line-height: 1em;
+}
+
+.list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 5em 0;
+}
+
+.item {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.button {
+  width: 80%;
+  height: 2.5em;
+  font-size: 1.2rem;
+  background-color: makerWhiteGray;
+  cursor: pointer;
+  border: none;
+  outline: 0;
+  transition: ease-in-out 200ms;
+}
+
+.item:first-child .button:hover {
+  background-color: makerOrange;
+  color: makerWhite;
+}
+
+.item:last-child .button:hover {
+  background-color: makerGreen;
+  color: makerWhite;
+}
+
+.item svg {
+  font-size: 2em;
+  position: absolute;
+  top: 0.25em;
+  left: 5em;
+}
