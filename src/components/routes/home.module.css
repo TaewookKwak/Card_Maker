@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100vh;
+  width: 80%;
   height: 100%;
 }
 
@@ -15,5 +15,9 @@
 @media screen and (max-width: mediaQuery) {
   .card {
     flex-direction: column;
+  }
+
+  .maker {
+    width: 100%;
   }
 }
