@@ -1,14 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Footer from '../footer/footer'
 import Header from '../header/header'
 import styles from './login.module.css'
 
 const Login = ({ authService }) => {
+  const navigate = useNavigate()
+  const goToHome = (userId) => {
+    navigate('/home', { state: { id: userId } })
+  }
   const onLogin = (e) => {
     authService //
       .login(e.target.textContent)
-      .then(console.log)
+      .then((data) => goToHome(data.user.uid))
   }
+
+  useEffect(() => {
+    authService //
+      .onAuthChange((user) => {
+        user && goToHome(user.uid)
+      })
+  })
   return (
     <section className={styles.login}>
       <Header />
