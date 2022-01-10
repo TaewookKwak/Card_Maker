@@ -10,7 +10,7 @@
 
 .loginTitle {
   font-size: 3em;
-  color: makerGreen;
+  color: makerBlack;
 }
 
 .loginTitle svg {
@@ -37,7 +37,7 @@
 }
 
 .button {
-  width: 80%;
+  width: 90%;
   height: 2.5em;
   font-size: 1.2rem;
   background-color: makerWhiteGray;

@@ -14,7 +14,6 @@ const Login = ({ authService }) => {
       <Header />
       <section>
         <div className={styles.loginTitle}>
-          <i class="fas fa-user"></i>
           <h1 className={styles.title}>Login</h1>
         </div>
         <ul className={styles.list}>
