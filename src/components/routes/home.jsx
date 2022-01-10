@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import Editor from '../editor/editor'
 import Footer from '../footer/footer'
 import Header from '../header/header'
-import styles from './routes.module.css'
+import Preview from '../preview/preview'
+import styles from './home.module.css'
 function Home({ authService }) {
   const navigate = useNavigate()
   const location = useLocation()
@@ -22,7 +24,10 @@ function Home({ authService }) {
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
-      <h1>Hello Login</h1>
+      <div className={styles.card}>
+        <Editor />
+        <Preview />
+      </div>
       <Footer />
     </section>
   )

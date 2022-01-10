@@ -1,7 +1,7 @@
 @value makerBlack,makerOrange,makerWhiteGray,makerGreen,makerWhite,makerBlack from '../../common/colors.css';
 .login {
-  width: 30em;
-  height: 40em;
+  width: 20em;
+  height: 30em;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
 }
 
 .loginTitle {
-  font-size: 3em;
+  font-size: 2em;
   color: makerBlack;
 }
 
@@ -61,5 +61,5 @@
   font-size: 2em;
   position: absolute;
   top: 0.25em;
-  left: 5em;
+  left: 2em;
 }

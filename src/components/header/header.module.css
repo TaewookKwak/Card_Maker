@@ -1,4 +1,4 @@
-@value makerGreen,makerWhite,makerBlack from '../../common/colors.css';
+@value makerOrange,makerGreen,makerWhite,makerBlack from '../../common/colors.css';
 
 .header {
   width: 100%;
@@ -33,11 +33,17 @@
   position: absolute;
   right: 3em;
   top: 1em;
-  padding: 0.8em;
+  padding: 0.3em;
   border-radius: 20%;
   background-color: makerBlack;
   color: makerWhite;
   border: none;
   outline: none;
   cursor: pointer;
+  transition: ease-in-out 200ms transform;
+}
+
+.logout:hover {
+  background-color: makerOrange;
+  transform: scale(1.1);
 }
