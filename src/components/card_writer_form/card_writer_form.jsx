@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import Button from '../button/button'
 import ImageFileInput from '../image_file_input/image_file_input'
 import styles from './card_writer_form.module.css'
-function CardWriterForm({ cards, setCards, onAdd }) {
+function CardWriterForm({ cards, onAdd }) {
   const formRef = useRef()
   const nameRef = useRef()
   const companyRef = useRef()

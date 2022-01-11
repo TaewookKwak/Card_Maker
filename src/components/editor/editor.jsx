@@ -4,18 +4,24 @@ import Card_editor_form from '../card_editor_form/card_editor_form'
 import CardWriterForm from '../card_writer_form/card_writer_form'
 import styles from './editor.module.css'
 
-function Editor({ cards, setCards, addCard }) {
+function Editor({ setCards, cards, addCard, deleteCard, updateCard }) {
   return (
     <section className={styles.editor}>
       <h1 className={styles.title}>Card Maker</h1>
-      {cards.map((card) => {
+      {Object.keys(cards).map((key) => {
         return (
           <>
-            <Card_editor_form key={card.id} card={card} />
+            <Card_editor_form
+              key={key}
+              setCards={setCards}
+              onDelete={deleteCard}
+              card={cards[key]}
+              updateCard={updateCard}
+            />
           </>
         )
       })}
-      <CardWriterForm setCards={setCards} cards={cards} onAdd={addCard} />
+      <CardWriterForm cards={cards} onAdd={addCard} />
     </section>
   )
 }

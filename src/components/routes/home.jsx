@@ -6,8 +6,8 @@ import Header from '../header/header'
 import Preview from '../preview/preview'
 import styles from './home.module.css'
 function Home({ authService }) {
-  const [cards, setCards] = useState([
-    {
+  const [cards, setCards] = useState({
+    '1': {
       id: '1',
       name: 'sam',
       company: 'Samsung',
@@ -18,7 +18,7 @@ function Home({ authService }) {
       fileName: 'sam',
       fileURL: null,
     },
-    {
+    '2': {
       id: '2',
       name: 'sam',
       company: 'Samsung',
@@ -29,7 +29,7 @@ function Home({ authService }) {
       fileName: 'sam',
       fileURL: null,
     },
-    {
+    '3': {
       id: '3',
       name: 'sam',
       company: 'Samsung',
@@ -40,7 +40,7 @@ function Home({ authService }) {
       fileName: 'sam',
       fileURL: null,
     },
-  ])
+  })
   const navigate = useNavigate()
   const onLogout = () => {
     authService.logout()
@@ -55,15 +55,37 @@ function Home({ authService }) {
   })
 
   const addCard = (card) => {
-    const updated = [...cards, card]
+    const updated = { ...cards, card }
     setCards(updated)
+  }
+
+  const deleteCard = (card) => {
+    setCards((cards) => {
+      const updated = { ...cards }
+      delete updated[card.id]
+      return updated
+    })
+  }
+
+  const createOrUpdateCard = (card) => {
+    setCards((cards) => {
+      const updated = { ...cards }
+      updated[card.id] = card
+      return updated
+    })
   }
 
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.card}>
-        <Editor cards={cards} setCards={setCards} addCard={addCard} />
+        <Editor
+          cards={cards}
+          setCards={setCards}
+          addCard={createOrUpdateCard}
+          deleteCard={deleteCard}
+          updateCard={createOrUpdateCard}
+        />
         <Preview cards={cards} />
       </div>
       <Footer />
