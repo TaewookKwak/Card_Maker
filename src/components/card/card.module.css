@@ -8,7 +8,7 @@ p {
 
 .card {
   display: flex;
-  border: 1px solid transparent;
+  border: 1px solid lightgray;
   padding: 2vh;
   border-radius: 2vh;
   margin: 1vh;
@@ -45,7 +45,7 @@ p {
 }
 
 .avatar {
-  width: 60%;
+  width: 6em;
   border: 1px solid black;
   border-radius: 50%;
 }

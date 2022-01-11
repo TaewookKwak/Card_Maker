@@ -1,10 +1,12 @@
 @value mediaQuery from '../../common/size.css';
+@value makerBlack,makerOrange,makerWhiteGray,makerGreen,makerWhite,makerBlack from '../../common/colors.css';
 .maker {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 80%;
   height: 100%;
+  background-color: makerWhite;
 }
 
 .card {
