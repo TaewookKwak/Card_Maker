@@ -1,0 +1,29 @@
+.cardEditor {
+  padding: 1vh 2vh;
+  border-bottom: 1px solid lightgray;
+}
+
+.input {
+  font-size: 0.8rem;
+  width: 100%;
+  border: none;
+}
+
+.select {
+  font-size: 0.8rem;
+  width: 100%;
+  border: none;
+}
+
+.textarea {
+  font-size: 0.8rem;
+  width: 100%;
+  border: none;
+  height: 1.5em;
+  resize: none;
+}
+
+.buttons {
+  display: flex;
+  padding: 0.3em;
+}
