@@ -16,7 +16,7 @@ function Home({ FileInput, authService }) {
       title: 'Software Engineer',
       email: 'sam@gmail.com',
       message: 'go for it',
-      fileName: 'sam',
+      fileName: null,
       fileURL: null,
     },
     '2': {
@@ -27,7 +27,7 @@ function Home({ FileInput, authService }) {
       title: 'Software Engineer',
       email: 'sam@gmail.com',
       message: 'go for it',
-      fileName: 'sam',
+      fileName: null,
       fileURL: null,
     },
     '3': {
@@ -38,7 +38,7 @@ function Home({ FileInput, authService }) {
       title: 'Software Engineer',
       email: 'sam@gmail.com',
       message: 'go for it',
-      fileName: 'sam',
+      fileName: null,
       fileURL: null,
     },
   })
