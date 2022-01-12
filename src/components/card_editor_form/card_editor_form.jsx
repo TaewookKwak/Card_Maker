@@ -3,7 +3,7 @@ import { useRef } from 'react/cjs/react.development'
 import Button from '../button/button'
 import ImageFileInput from '../image_file_input/image_file_input'
 import styles from './card_editor_form.module.css'
-function Card_editor_form({ card, onDelete, updateCard }) {
+function Card_editor_form({ FileInput, card, onDelete, updateCard }) {
   const {
     id,
     name,
@@ -22,6 +22,14 @@ function Card_editor_form({ card, onDelete, updateCard }) {
   const titleRef = useRef()
   const emailRef = useRef()
   const messageRef = useRef()
+
+  const onFileChange = (file) => {
+    updateCard({
+      ...card,
+      fileName: file.name,
+      fileURL: file.url,
+    })
+  }
 
   const onChange = (e) => {
     if (e.currentTarget == null) {
@@ -93,7 +101,7 @@ function Card_editor_form({ card, onDelete, updateCard }) {
           onChange={onChange}
         ></textarea>
         <div className={styles.buttons}>
-          <ImageFileInput />
+          <FileInput name={fileName} onFileChange={onFileChange} />
           <Button name="Delete" onClick={onSubmit} />
         </div>
       </form>

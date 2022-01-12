@@ -1,8 +1,8 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Button from '../button/button'
 import ImageFileInput from '../image_file_input/image_file_input'
 import styles from './card_writer_form.module.css'
-function CardWriterForm({ cards, onAdd }) {
+function CardWriterForm({ FileInput, cards, onAdd }) {
   const formRef = useRef()
   const nameRef = useRef()
   const companyRef = useRef()
@@ -11,6 +11,14 @@ function CardWriterForm({ cards, onAdd }) {
   const emailRef = useRef()
   const messageRef = useRef()
 
+  const [file, setFile] = useState({ fileName: null, fileURL: null })
+
+  const onFileChange = (file) => {
+    setFile({
+      fileName: file.name,
+      fileURL: file.url,
+    })
+  }
   const onSubmit = (e) => {
     e.preventDefault()
     const card = {
@@ -21,11 +29,13 @@ function CardWriterForm({ cards, onAdd }) {
       title: titleRef.current.value || '',
       email: emailRef.current.value || '',
       message: messageRef.current.value || '',
-      fileName: '',
-      fileURL: '',
+      fileName: file.fileName || '',
+      fileURL: file.fileURL || '',
     }
     formRef.current.reset()
+    console.log(card)
     onAdd(card)
+    setFile({ fileName: null, fileURL: null })
   }
   return (
     <div className={styles.cardEditor}>
@@ -70,7 +80,7 @@ function CardWriterForm({ cards, onAdd }) {
           placeholder="message"
         ></textarea>
         <div className={styles.buttons}>
-          <ImageFileInput />
+          <FileInput name={file.fileName} onFileChange={onFileChange} />
           <Button name="Add" onClick={onSubmit} />
         </div>
       </form>

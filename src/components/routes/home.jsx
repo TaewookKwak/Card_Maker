@@ -5,7 +5,8 @@ import Footer from '../footer/footer'
 import Header from '../header/header'
 import Preview from '../preview/preview'
 import styles from './home.module.css'
-function Home({ authService }) {
+function Home({ FileInput, authService }) {
+  const [image, setImage] = useState('')
   const [cards, setCards] = useState({
     '1': {
       id: '1',
@@ -75,18 +76,26 @@ function Home({ authService }) {
     })
   }
 
+  // const onUpload = (e) => {
+  //   uploadImage.upload(e).then((url) => {
+  //     console.log(url)
+  //     setImage(url)
+  //   })
+  // }
+
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.card}>
         <Editor
+          FileInput={FileInput}
           cards={cards}
           setCards={setCards}
           addCard={createOrUpdateCard}
           deleteCard={deleteCard}
           updateCard={createOrUpdateCard}
         />
-        <Preview cards={cards} />
+        <Preview cards={cards} image={image} updateCard={createOrUpdateCard} />
       </div>
       <Footer />
     </section>

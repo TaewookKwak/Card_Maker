@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './card.module.css'
-function Card({ card }) {
+function Card({ card, image }) {
   const DEFAULT_IMAGE = '/images/default_logo.png'
   const {
     id,
