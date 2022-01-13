@@ -8,11 +8,8 @@ function App({ FileInput, authService, cardRepository }) {
     <div className={styles.app}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login authService={authService} />} />
-        </Routes>
-        <Routes>
           <Route
-            path="/home"
+            path="/home/"
             element={
               <Home
                 FileInput={FileInput}
@@ -21,6 +18,7 @@ function App({ FileInput, authService, cardRepository }) {
               />
             }
           />
+          <Route path="/" element={<Login authService={authService} />} />
         </Routes>
       </BrowserRouter>
     </div>

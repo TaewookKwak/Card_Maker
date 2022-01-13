@@ -8,7 +8,6 @@ import styles from './home.module.css'
 function Home({ FileInput, authService, cardRepository }) {
   const location = useLocation()
   const locationState = location?.state
-  console.log(locationState)
   const [userId, setUserId] = useState(locationState && locationState.id)
   const [cards, setCards] = useState({})
   const navigate = useNavigate()
@@ -25,7 +24,7 @@ function Home({ FileInput, authService, cardRepository }) {
       setCards(cards)
     })
     return () => stopSync()
-  }, [userId])
+  }, [userId, cardRepository])
 
   useEffect(() => {
     authService.onAuthChange((user) => {
@@ -35,7 +34,7 @@ function Home({ FileInput, authService, cardRepository }) {
         navigate('/')
       }
     })
-  })
+  }, [authService])
 
   const addCard = (card) => {
     const updated = { ...cards, card }

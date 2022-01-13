@@ -17,16 +17,14 @@ function Editor({
       <h1 className={styles.title}>Card Maker</h1>
       {Object.keys(cards).map((key) => {
         return (
-          <>
-            <Card_editor_form
-              key={key}
-              FileInput={FileInput}
-              setCards={setCards}
-              onDelete={deleteCard}
-              card={cards[key]}
-              updateCard={updateCard}
-            />
-          </>
+          <Card_editor_form
+            key={key}
+            FileInput={FileInput}
+            setCards={setCards}
+            onDelete={deleteCard}
+            card={cards[key]}
+            updateCard={updateCard}
+          />
         )
       })}
       <CardWriterForm FileInput={FileInput} cards={cards} onAdd={addCard} />

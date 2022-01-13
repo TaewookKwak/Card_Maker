@@ -12,7 +12,6 @@ function ImageFileInput({ uploadImage, name, onFileChange }) {
   const onChange = async (e) => {
     setloading(true)
     const uploaded = await uploadImage.upload(e)
-    console.log(uploaded)
     onFileChange({
       name: uploaded.original_filename,
       url: uploaded.secure_url,

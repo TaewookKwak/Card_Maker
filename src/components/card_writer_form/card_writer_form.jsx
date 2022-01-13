@@ -33,7 +33,6 @@ function CardWriterForm({ FileInput, cards, onAdd }) {
       fileURL: file.fileURL || '',
     }
     formRef.current.reset()
-    console.log(card)
     onAdd(card)
     setFile({ fileName: null, fileURL: null })
   }

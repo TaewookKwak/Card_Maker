@@ -36,7 +36,6 @@ function Card_editor_form({ FileInput, card, onDelete, updateCard }) {
       return
     }
     e.preventDefault()
-    console.log(e.currentTarget.value)
     updateCard({
       ...card,
       [e.currentTarget.name]: e.currentTarget.value,
