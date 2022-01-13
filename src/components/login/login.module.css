@@ -1,50 +1,86 @@
 @value makerBlack,makerOrange,makerWhiteGray,makerGreen,makerWhite,makerBlack from '../../common/colors.css';
 .login {
-  width: 20em;
-  height: 30em;
+  width: 100%;
+  height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: white;
 }
 
-.loginTitle {
-  font-size: 2em;
-  color: makerBlack;
+.logintitle {
+  font-size: 1.5em;
+  color: rgb(129, 124, 124);
+  margin: 1em auto;
 }
 
-.loginTitle svg {
-  border: 0.1em solid;
-  padding: 0.5em;
-  border-radius: 50%;
+.signinWithEmail {
+  display: flex;
+  flex-direction: column;
+  margin: 2em auto;
 }
 
 .title {
-  margin: 0;
-  line-height: 1em;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: rgb(157, 163, 165);
+  padding: 2px;
+}
+
+.input {
+  font-size: 1em;
+  margin-bottom: 1em;
+  width: 80%;
+  height: 2em;
+  border: none;
+  outline: none;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 0 auto;
+  max-width: 768px;
+}
+
+.signinBtn {
+  width: 80%;
+  background-color: rgb(157, 162, 170);
+  height: 2.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin: 1em auto;
+  border: none;
+  border-radius: 1em;
+  color: white;
+  cursor: pointer;
+  transition: ease-in-out 200ms;
+  max-width: 768px;
+}
+
+.signinBtn:hover {
+  background-color: rgb(98, 171, 240);
 }
 
 .list {
-  width: 100%;
+  display: flex;
+  justify-content: center;
   list-style: none;
   padding: 0;
-  margin: 5em 0;
 }
 
 .item {
-  margin-bottom: 0.5rem;
   position: relative;
 }
 
 .button {
-  width: 90%;
+  width: fit-content;
+  background-color: makerGreen;
   height: 2.5em;
-  font-size: 1.2rem;
-  background-color: makerWhiteGray;
-  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  margin: 1.5em;
   border: none;
-  outline: 0;
+  border-radius: 1em;
+  color: white;
+  cursor: pointer;
   transition: ease-in-out 200ms;
 }
 
@@ -54,13 +90,34 @@
 }
 
 .item:last-child .button:hover {
-  background-color: makerGreen;
+  background-color: rgb(98, 171, 240);
   color: makerWhite;
 }
 
 .item svg {
-  font-size: 2em;
+  font-size: 1.5em;
   position: absolute;
-  top: 0.25em;
-  left: 2em;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+  left: 0px;
+}
+
+.SignupPara {
+  font-weight: 600;
+}
+
+.SignupBtn {
+  font-size: 1em;
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+  color: rgb(98, 171, 240);
+  padding: 0;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+
+.SignupBtn:hover {
+  border-bottom: 1px solid rgb(98, 171, 240);
 }

@@ -1,0 +1,42 @@
+.container {
+  position: fixed;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 50vh;
+  height: 30vh;
+  z-index: 100%;
+  border-radius: 2%;
+  background-color: white;
+}
+
+.bg {
+  position: relative;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.cancleBtn {
+  outline: none;
+  border: none;
+  background-color: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.returnBtn {
+  outline: none;
+  border: none;
+  background-color: white;
+  border-bottom: gray 1px solid;
+  cursor: pointer;
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
@@ -9,9 +9,9 @@ import ImageFileInput from './components/image_file_input/image_file_input'
 import Cardrepository from './service/card_repository'
 const authService = new AuthService()
 const uploadImage = new UploadImage()
-const FileInput = (props) => (
+const FileInput = memo((props) => (
   <ImageFileInput {...props} uploadImage={uploadImage} />
-)
+))
 const cardRepository = new Cardrepository()
 
 ReactDOM.render(

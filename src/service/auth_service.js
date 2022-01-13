@@ -17,6 +17,14 @@ class AuthService {
     })
   }
 
+  createAccount(email, password) {
+    return firebaseAuth.createUserWithEmailAndPassword(email, password)
+  }
+
+  loginWithEmail(email, password) {
+    return firebaseAuth.signInWithEmailAndPassword(email, password)
+  }
+
   getProvider(providerName) {
     switch (providerName) {
       case 'Google':

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Editor from '../editor/editor'
 import Footer from '../footer/footer'
@@ -12,9 +12,9 @@ function Home({ FileInput, authService, cardRepository }) {
   const [cards, setCards] = useState({})
   const navigate = useNavigate()
 
-  const onLogout = () => {
+  const onLogout = useCallback(() => {
     authService.logout()
-  }
+  }, [authService])
 
   useEffect(() => {
     if (!userId) {
@@ -30,16 +30,12 @@ function Home({ FileInput, authService, cardRepository }) {
     authService.onAuthChange((user) => {
       if (user) {
         setUserId(user.uid)
+        console.log(user.uid)
       } else {
         navigate('/')
       }
     })
   }, [authService])
-
-  const addCard = (card) => {
-    const updated = { ...cards, card }
-    setCards(updated)
-  }
 
   const deleteCard = (card) => {
     setCards((cards) => {

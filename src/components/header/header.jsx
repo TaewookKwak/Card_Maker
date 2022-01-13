@@ -2,7 +2,6 @@ import React, { memo, useMemo } from 'react'
 import styles from './header.module.css'
 
 const Header = ({ onLogout }) => {
-  console.log('header render')
   return (
     <header className={styles.header}>
       <svg
@@ -36,4 +35,4 @@ const Header = ({ onLogout }) => {
   )
 }
 
-export default React.memo(Header)
+export default memo(Header)

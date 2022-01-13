@@ -1,4 +1,5 @@
 import React from 'react'
+import { memo } from 'react/cjs/react.development'
 import styles from './button.module.css'
 function Button({ name, onClick }) {
   return (
@@ -8,4 +9,4 @@ function Button({ name, onClick }) {
   )
 }
 
-export default Button
+export default memo(Button)

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRef } from 'react/cjs/react.development'
+import { memo, useRef } from 'react/cjs/react.development'
 import Button from '../button/button'
 import ImageFileInput from '../image_file_input/image_file_input'
 import styles from './card_editor_form.module.css'
@@ -108,4 +108,4 @@ function Card_editor_form({ FileInput, card, onDelete, updateCard }) {
   )
 }
 
-export default Card_editor_form
+export default memo(Card_editor_form)

@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { memo } from 'react/cjs/react.development'
 import Button from '../button/button'
 import ImageFileInput from '../image_file_input/image_file_input'
 import styles from './card_writer_form.module.css'
@@ -87,4 +88,4 @@ function CardWriterForm({ FileInput, cards, onAdd }) {
   )
 }
 
-export default CardWriterForm
+export default memo(CardWriterForm)

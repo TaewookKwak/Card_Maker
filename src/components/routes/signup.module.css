@@ -1,0 +1,55 @@
+.title {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: rgb(157, 163, 165);
+  padding: 2px;
+}
+
+.inputEmail,
+.inputPassword {
+  font-size: 1em;
+  margin-bottom: 1em;
+  width: 100%;
+  height: 2em;
+  border: none;
+  outline: none;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.completeBtn {
+  width: 100%;
+  background-color: rgb(157, 162, 170);
+  height: 2.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin: 1em auto;
+  border: none;
+  border-radius: 1em;
+  color: white;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+.completeBtn:hover {
+  background-color: rgb(98, 171, 240);
+}
+
+.SigninPara {
+  font-weight: 600;
+}
+
+.SigninBtn {
+  font-size: 1em;
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+  color: rgb(98, 171, 240);
+  padding: 0;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+
+.SigninBtn:hover {
+  border-bottom: 1px solid rgb(98, 171, 240);
+}
