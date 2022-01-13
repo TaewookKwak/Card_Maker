@@ -1,4 +1,4 @@
-@value makerWhiteGray from '/src/common/colors.css';
+@value makerWheat, makerWhiteGray from '/src/common/colors.css';
 
 * {
   box-sizing: border-box;

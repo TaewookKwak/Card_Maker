@@ -3,7 +3,6 @@ import Card from '../card/card'
 import styles from './preview.module.css'
 
 function Preview({ cards, image, updateCard }) {
-  const avatar = image && null
   return (
     <section className={styles.preview}>
       <h1 className={styles.title}>Card Preview</h1>

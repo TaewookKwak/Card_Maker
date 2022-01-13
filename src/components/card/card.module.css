@@ -13,6 +13,8 @@ p {
   border-radius: 2vh;
   margin: 1vh;
   background-color: makerWhite;
+  -webkit-box-shadow: 6px 10px 9px -6px rgba(0, 0, 0, 0.72);
+  box-shadow: 6px 10px 9px -6px rgba(0, 0, 0, 0.72);
 }
 
 .card.dark {

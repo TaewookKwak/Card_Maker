@@ -5,51 +5,33 @@ import Footer from '../footer/footer'
 import Header from '../header/header'
 import Preview from '../preview/preview'
 import styles from './home.module.css'
-function Home({ FileInput, authService }) {
-  const [image, setImage] = useState('')
-  const [cards, setCards] = useState({
-    '1': {
-      id: '1',
-      name: 'sam',
-      company: 'Samsung',
-      theme: 'light',
-      title: 'Software Engineer',
-      email: 'sam@gmail.com',
-      message: 'go for it',
-      fileName: null,
-      fileURL: null,
-    },
-    '2': {
-      id: '2',
-      name: 'sam',
-      company: 'Samsung',
-      theme: 'dark',
-      title: 'Software Engineer',
-      email: 'sam@gmail.com',
-      message: 'go for it',
-      fileName: null,
-      fileURL: null,
-    },
-    '3': {
-      id: '3',
-      name: 'sam',
-      company: 'Samsung',
-      theme: 'colorful',
-      title: 'Software Engineer',
-      email: 'sam@gmail.com',
-      message: 'go for it',
-      fileName: null,
-      fileURL: null,
-    },
-  })
+function Home({ FileInput, authService, cardRepository }) {
+  const location = useLocation()
+  const locationState = location?.state
+  console.log(locationState)
+  const [userId, setUserId] = useState(locationState && locationState.id)
+  const [cards, setCards] = useState({})
   const navigate = useNavigate()
+
   const onLogout = () => {
     authService.logout()
   }
 
   useEffect(() => {
+    if (!userId) {
+      return
+    }
+    const stopSync = cardRepository.syncCard(userId, (cards) => {
+      setCards(cards)
+    })
+    return () => stopSync()
+  }, [userId])
+
+  useEffect(() => {
     authService.onAuthChange((user) => {
-      if (!user) {
+      if (user) {
+        setUserId(user.uid)
+      } else {
         navigate('/')
       }
     })
@@ -66,6 +48,7 @@ function Home({ FileInput, authService }) {
       delete updated[card.id]
       return updated
     })
+    cardRepository.removeCard(userId, card)
   }
 
   const createOrUpdateCard = (card) => {
@@ -74,6 +57,7 @@ function Home({ FileInput, authService }) {
       updated[card.id] = card
       return updated
     })
+    cardRepository.saveCard(userId, card)
   }
 
   // const onUpload = (e) => {
@@ -95,7 +79,7 @@ function Home({ FileInput, authService }) {
           deleteCard={deleteCard}
           updateCard={createOrUpdateCard}
         />
-        <Preview cards={cards} image={image} updateCard={createOrUpdateCard} />
+        <Preview cards={cards} updateCard={createOrUpdateCard} />
       </div>
       <Footer />
     </section>
